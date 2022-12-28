@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>浸染</title>
+    <style>
+        body {
+
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .back {
+            background-image: url('./浸染_0000s_0003_背景.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 0;
+        }
+
+        .crock {
+            background-image: url('./浸染_0000s_0002_前缸.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 40%;
+            width: 35%;
+            bottom: 0%;
+            left: 30%;
+            position: absolute;
+            margin: 0%;
+            z-index: 1;
+        }
+
+        .crock_front {
+            background-image: url('./浸染_0000s_0000_前缸.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 38%;
+            width: 35%;
+            bottom: 0%;
+            left: 30%;
+            position: absolute;
+            margin: 0%;
+            z-index: 4;
+        }
+
+        .stick {
+            background-image: url('./浸染_0000s_0001_杆.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 5%;
+            width: 60%;
+            top: 30%;
+            left: 20%;
+            position: absolute;
+            margin: 0%;
+            z-index: 2;
+        }
+
+        .cloth {
+            background-image: url('./浸染_0000s_0000s_0002_布1.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 60%;
+            width: 25%;
+            top: 30%;
+            left: 35%;
+            position: absolute;
+            margin: 0%;
+            z-index: 3;
+        }
+
+        .sign {
+            background-image: url('./浸染_0002_文本框.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 60%;
+            width: 20%;
+            top: 6%;
+            left: 8%;
+            position: absolute;
+            z-index: 5;
+        }
+
+        .round {
+            background-image: url('./浸染_0001_指引圆环.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 20%;
+            width: 10%;
+            top: 24%;
+            left: 75%;
+            position: absolute;
+            z-index: 5;
+            animation: bigger1 3.5s infinite;
+        }
+
+        @keyframes bigger1 {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .guide {
+            background-image: url('./浸染_0000_指引箭头.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 40%;
+            width: 5%;
+            top: 44%;
+            left: 78%;
+            position: absolute;
+            z-index: 6;
+        }
+
+        .container {
+            height: 60%;
+            width: 13%;
+            top: 20%;
+            left: 72%;
+            position: absolute;
+            z-index: 4;
+            
+        }
+
+        
+        @keyframes fadein{
+            100%{
+                opacity: 0;
+            }
+        }
+
+        
+    </style>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".round").click(function () {
+                $(".round").css("animation","fadein 3s").css("opacity",0);
+                var y1=$(".stick").position().top;
+                var y2=$(".cloth").position().top;
+                var y=150;
+                $(".stick").animate({top:y1+y+"px"},"slow");
+                $(".cloth").animate({top:y2+y+"px"},"slow");
+                $(".cloth").css("background-image","url('./浸染_0000s_0000s_0001_布2.png')");
+                $(".stick").animate({top:y1+"px"},"slow");
+                $(".cloth").animate({top:y2+"px"},"slow");
+                $(".round").css("animation","fadein 3s").css("opacity",1);
+                $(".round").click(function () {
+                    $(".round").css("animation","fadein 3s").css("opacity",0);
+                    var y1=$(".stick").position().top;
+                    var y2=$(".cloth").position().top;
+                    var y=150;
+                    $(".stick").animate({top:y1+y+"px"},"slow");
+                    $(".cloth").animate({top:y2+y+"px"},"slow");
+                    $(".cloth").css("background-image","url('./浸染_0000s_0000s_0000_布3.png')");
+                    $(".stick").animate({top:y1+"px"},"slow");
+                    $(".cloth").animate({top:y2+"px"},"slow");
+                    $(".round").css("animation","fadein 3s").css("opacity",1);
+            });
+            });
+        });  
+    </script>
+</head>
+<body>
+    <div class="back"></div>
+    <div class="crock"></div>
+    <div class="crock_front"></div>
+    <div class="stick"></div>
+    <div class="cloth"></div>
+    <div class="sign"></div>
+    <div class="round"></div>
+    <div class="guide"></div>
+    <div class="container"></div>
+</body>
+</html>
